@@ -1,2 +1,3 @@
 /tools-ts/node_modules
 /tools/__pycache__
+tools-ts/package-lock.json

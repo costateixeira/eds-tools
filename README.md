@@ -2,6 +2,8 @@
 
 A human-readable YAML format for defining single-line electrical diagrams, convertible to/from the native EDS format.
 
+> **Disclaimer**: This is a personal utility and community contribution, not an official tool. It is not guaranteed to be complete, accurate, or compatible with all versions of Eendraadschema. Use at your own risk. Always verify generated EDS files in the official application before relying on them.
+
 ## Rationale
 
 This YAML format provides:
@@ -156,52 +158,13 @@ sitplan:
     size: [400, 300]
 ```
 
-## Complete Example
+## Examples
 
-```yaml
-properties:
-  owner: John Doe
-  installer: Licensed Electrician
-  info: 2 x 230V ~50 Hz
-
-elements:
-- Zekering/differentieel:
-    amperage: '63'
-    kortsluitvermogen: '15'
-
-- Elektriciteitsmeter:
-    children:
-    - Zekering/differentieel:
-        bescherming: differentieelautomaat
-        differentieel_delta_amperage: '30'
-        children:
-        - Aansluiting:
-            children:
-            - Bord:
-                children:
-                - Kring:  # Circuit A - Kitchen
-                    amperage: '20'
-                    type_kabel: VOB 3G2,5
-                    tekst: Kitchen
-                    children:
-                    - Contactdoos: {aantal: '3'}
-                    - Contactdoos: {aantal: '2'}
-
-                - Kring:  # Circuit B - Lighting
-                    children:
-                    - Lichtcircuit: {aantal_schakelaars: '2'}
-                    - Schakelaars:
-                        children:
-                        - Lichtpunt: {aantal: '6', type_lamp: spot}
-
-                - Kring:  # Circuit C - Washing machine
-                    amperage: '20'
-                    type_kabel: VOB 3G2,5
-                    children:
-                    - Contactdoos:
-                        children:
-                        - Wasmachine
-```
+See [`yaml/example.yaml`](yaml/example.yaml) for a comprehensive 4-page residential installation example featuring:
+- Ground floor (living room, kitchen, dining, hallway)
+- First floor (bedrooms, bathrooms, office)
+- Utility room & garage (appliances, heating)
+- Outdoor & garden (terrace, pool, EV charger)
 
 ---
 
@@ -269,8 +232,7 @@ electric/
 ├── tools-ts/           # TypeScript version
 │   ├── src/
 │   └── package.json
-├── yaml/               # Example YAML files
-│   ├── new.yaml
-│   └── new2.yaml
-└── eds/                # Example EDS files
+├── yaml/               # YAML files
+│   └── example.yaml    # Comprehensive example
+└── old/                # Archived files
 ```

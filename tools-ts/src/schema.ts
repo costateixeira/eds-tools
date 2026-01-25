@@ -1,0 +1,285 @@
+/**
+ * Schema definitions for EDS element types and their default values
+ */
+
+/**
+ * Schema version - update when defaults change
+ */
+export const SCHEMA_VERSION = '1.0.0';
+
+export interface ElementDefaults {
+  [key: string]: string | boolean | number;
+}
+
+export interface SchemaTypes {
+  [typeName: string]: {
+    defaults: ElementDefaults;
+  };
+}
+
+/**
+ * Default values for all element types
+ * Converted from schema.yaml
+ */
+export const SCHEMA: SchemaTypes = {
+  "Zekering/differentieel": {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      aantal_polen: "2",
+      bescherming: "automatisch",
+      amperage: "20",
+      differentieel_delta_amperage: "300",
+      type_differentieel: "A",
+      curve_automaat: "",
+      differentieel_is_selectief: false,
+      kortsluitvermogen: "3",
+      huishoudelijk: true,
+      fase: "",
+      newPage: false,
+    },
+  },
+
+  Elektriciteitsmeter: {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      adres: "",
+    },
+  },
+
+  Aansluiting: {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      met_teller: false,
+      aantal_polen: "2",
+      bescherming: "geen",
+      amperage: "40",
+      type_kabel_na_teller: "",
+      differentieel_delta_amperage: "300",
+      adres: "",
+      type_differentieel: "A",
+      curve_automaat: "C",
+      differentieel_is_selectief: false,
+      kortsluitvermogen: "",
+      naam: "",
+      type_kabel_voor_teller: "",
+      huishoudelijk: true,
+      fase: "",
+      normaalGesloten: false,
+      newPage: false,
+    },
+  },
+
+  Bord: {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      is_geaard: true,
+      naam: "",
+      adres: "",
+    },
+  },
+
+  Kring: {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      aantal_polen: "2",
+      bescherming: "automatisch",
+      amperage: "16",
+      type_kabel: "VOB 3G1,5",
+      differentieel_delta_amperage: "300",
+      tekst: "",
+      kabel_locatie: "standaard",
+      type_differentieel: "",
+      curve_automaat: "C",
+      kabel_is_in_buis: true,
+      differentieel_is_selectief: false,
+      kortsluitvermogen: "3",
+      huishoudelijk: true,
+      fase: "",
+      normaalGesloten: false,
+      sturing: "",
+      adres: "",
+      newPage: false,
+      kabel_is_aanwezig: true,
+      naam: "",
+    },
+  },
+
+  Contactdoos: {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      is_geaard: true,
+      is_kinderveilig: true,
+      aantal: "1",
+      adres: "",
+      aantal_fases_indien_meerfasig: "standaard",
+      heeft_ingebouwde_schakelaar: false,
+      is_halfwaterdicht: false,
+      is_meerfasig: false,
+      heeft_nul_indien_meerfasig: false,
+      in_verdeelbord: false,
+    },
+  },
+
+  Lichtcircuit: {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      aantal_schakelaars: "1",
+      type_schakelaar: "enkelpolig",
+      adres: "",
+      heeft_signalisatielampje: false,
+      is_halfwaterdicht: false,
+      heeft_verklikkerlampje: false,
+      is_trekschakelaar: false,
+      normaalGesloten: false,
+      sturing: "",
+      aantal_lichtpunten: "1",
+    },
+  },
+
+  Lichtpunt: {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      aantal: "1",
+      aantal_buizen_indien_TL: "1",
+      adres: "",
+      type_lamp: "standaard",
+      type_noodverlichting: "Geen",
+      is_wandlamp: false,
+      is_halfwaterdicht: false,
+      heeft_ingebouwde_schakelaar: false,
+    },
+  },
+
+  Schakelaars: {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      aantal_schakelaars: "1",
+      type_schakelaar: "enkelpolig",
+      adres: "",
+      heeft_signalisatielampje: false,
+      is_halfwaterdicht: false,
+      heeft_verklikkerlampje: false,
+      is_trekschakelaar: false,
+      normaalGesloten: false,
+      sturing: "",
+    },
+  },
+
+  Drukknop: {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      aantal: "1",
+      aantal_knoppen_per_armatuur: "1",
+      adres: "",
+      type_knop: "standaard",
+      is_afgeschermd: false,
+      is_halfwaterdicht: false,
+      heeft_verklikkerlampje: false,
+    },
+  },
+
+  Motor: {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      adres: "",
+    },
+  },
+
+  Wasmachine: {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      adres: "",
+    },
+  },
+
+  Droogkast: {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      adres: "",
+    },
+  },
+
+  Verbruiker: {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      tekst: "",
+      horizontale_uitlijning: "centreer",
+      heeft_automatische_breedte: "automatisch",
+      breedte: "40",
+      is_vet: false,
+      is_cursief: false,
+      adres: "",
+    },
+  },
+
+  Ketel: {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      ketel_type: "Met boiler",
+      energiebron: "Gas (ventilator)",
+      warmte_functie: "Verwarmend",
+      adres: "",
+    },
+  },
+
+  "Vrije tekst": {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      tekst: "",
+      vrije_tekst_type: "zonder kader",
+      horizontale_uitlijning: "centreer",
+      heeft_automatische_breedte: "handmatig",
+      breedte: "20",
+      is_vet: false,
+      is_cursief: false,
+      adres: "",
+      kader_geometrie: "rechthoek",
+    },
+  },
+
+  Kookfornuis: {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      adres: "",
+    },
+  },
+
+  "Elektrische oven": {
+    defaults: {
+      autonr: "auto",
+      autoKringNaam: "auto",
+      adres: "",
+    },
+  },
+};
+
+/**
+ * Get defaults for an element type
+ */
+export function getDefaults(typeName: string): ElementDefaults {
+  return SCHEMA[typeName]?.defaults || {};
+}
+
+/**
+ * Get all known type names
+ */
+export function getTypeNames(): string[] {
+  return Object.keys(SCHEMA);
+}
